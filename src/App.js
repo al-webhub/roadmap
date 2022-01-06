@@ -1,16 +1,17 @@
 import React from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
 import Frame from "./components/Frame";
 import Landscape from "./components/Landscape";
+import * as THREE from "three";
 
-
+const color = new THREE.Color(0x333333);
+const fog = new THREE.Fog(color, 0, 400);
 
 function App() {
   return (
     <main>
       <Frame />
       <div class="content">
-        <Landscape />
+        <Landscape fog={fog} background={color} />
         <h2 class="content__title"></h2>
         <p class="content__subtitle"></p>
       </div>
