@@ -35,9 +35,9 @@ const Landscape = ({ background, fog }) => {
   return (
     <Canvas style={{ height: "80vh" }}>
       <CustomScene fog={fog} background={background}>
-        <ambientLight color={0xffffff} intensity={1} />
-        <Plane />
+        <ambientLight color={0xff0000} intensity={1} />
       </CustomScene>
+      <Plane />
     </Canvas>
   );
 };

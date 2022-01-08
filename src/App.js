@@ -9,7 +9,7 @@ const fog = new THREE.Fog(color2, 0, 400);
 
 function App() {
   return (
-    <Suspense fallback={<div>Loading</div>}>
+    <Suspense fallback={null}>
       <main>
         <Frame />
         <div class="content">
