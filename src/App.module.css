@@ -175,12 +175,12 @@ table {
 }
 
 body {
-  --color-text: #fff;
-  --color-bg: #0e0e0f;
+  --color-text: rgb(0, 0, 0);
+  --color-bg: #ffffff;
   --color-link: #ec8f7b;
   --color-link-hover: #fff;
-  --color-title: #fff;
-  --color-subtitle: #fff;
+  --color-title: rgb(255, 255, 255);
+  --color-subtitle: rgb(0, 0, 0);
   color: var(--color-text);
   background-color: var(--color-bg);
   font-family: Barlow, Arial, sans-serif;

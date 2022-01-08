@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import Frame from "./components/Frame";
 import Landscape from "./components/Landscape";
 import * as THREE from "three";
+import styles from "./App.module.css";
 
 const color = new THREE.Color(0xcccccc);
 const color2 = new THREE.Color(0xff0000);
@@ -12,12 +13,11 @@ function App() {
     <Suspense fallback={null}>
       <main>
         <Frame />
-        <div class="content">
+        <Frame />
+        <div className={styles.content}>
           <Landscape fog={fog} background={color} />
-          <h2 class="content__title"></h2>
-          <p class="content__subtitle"></p>
         </div>
-        <div class="overlay"></div>
+        <div className={styles.overlay}></div>
       </main>
     </Suspense>
   );

@@ -33,7 +33,7 @@ const Box = (props) => {
 
 const Landscape = ({ background, fog }) => {
   return (
-    <Canvas style={{ height: "80vh" }}>
+    <Canvas style={{ height: "100vh" }}>
       <CustomScene fog={fog} background={background}>
         <ambientLight color={0xff0000} intensity={1} />
       </CustomScene>
