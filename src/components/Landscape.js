@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import CustomScene from "./elements/CustomScene";
+import Plane from "./elements/Plane";
 
 const Box = (props) => {
   console.log(props);
@@ -31,14 +32,11 @@ const Box = (props) => {
 };
 
 const Landscape = ({ background, fog }) => {
-  console.log(background, fog);
   return (
     <Canvas style={{ height: "80vh" }}>
       <CustomScene fog={fog} background={background}>
-        {/* <ambientLight /> */}
-        <pointLight position={[-10, 10, 10]} />
-        <Box direction="-" position={[-1.2, 0, 0]} />
-        <Box direction="+" position={[1.2, 0, 0]} />
+        <ambientLight color={0xffffff} intensity={1} />
+        <Plane />
       </CustomScene>
     </Canvas>
   );
