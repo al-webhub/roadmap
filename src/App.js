@@ -13,8 +13,9 @@ function App() {
     <Suspense fallback={null}>
       <main>
         <Frame />
-        <Frame />
+
         <div className={styles.content}>
+          
           <Landscape fog={fog} background={color} />
         </div>
         <div className={styles.overlay}></div>
