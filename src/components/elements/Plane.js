@@ -5,6 +5,11 @@ import { fragmentShader } from "../../shaders/fragment";
 import { useFrame } from "@react-three/fiber";
 import { useTexture } from "@react-three/drei";
 import pallete_1 from "../../assets/custom_pallete.png";
+import pallete_2 from "../../assets/pallete1.png";
+import pallete_3 from "../../assets/pallete5.png";
+import pallete_4 from "../../assets/pallete6.png";
+import pallete_5 from "../../assets/pallete8.jpg";
+import pallete_6 from "../../assets/pallete.png";
 
 const uniforms = {
   time: { type: "f", value: 0.0 },
@@ -16,18 +21,18 @@ const uniforms = {
   scroll: { type: "f", value: 0.0 },
 };
 
-const Plane = (props) => {
-  const texture = useTexture([pallete_1]);
+const palletes = [pallete_1, pallete_2, pallete_3, pallete_4, pallete_5, pallete_6];
 
+const Plane = (props) => {
+  const textures = useTexture([...palletes]);
   const mesh = useRef();
 
-  useFrame((state, delta) => {
+  useFrame((state) => {
     const time = performance.now() * 0.001;
     mesh.current.material.uniforms.time.value = time;
     mesh.current.material.uniforms.scroll.value = time;
     mesh.current.material.uniforms.distortCenter.value = Math.sin(time) * 0.1;
-    mesh.current.material.uniforms.pallete.value = texture[0];
-    mesh.current.needsUpdate = true;
+    mesh.current.material.uniforms.pallete.value = textures[props.pallete];
   });
 
   return (
