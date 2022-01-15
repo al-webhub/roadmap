@@ -189,3 +189,12 @@ body {
   overflow: hidden;
   height: 100vh;
 }
+
+.preloader {
+  width: 100vw;
+  height: 100vh;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

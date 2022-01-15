@@ -1,7 +1,13 @@
 import React from "react";
+import Delay from "../components/elements/Delay";
 
 const ReactPage = () => {
-  return <div>React</div>;
+  return (
+    <>
+      <Delay />
+      <div>React</div>
+    </>
+  );
 };
 
 export default ReactPage;

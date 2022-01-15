@@ -1,7 +1,13 @@
 import React from "react";
+import Delay from "../components/elements/Delay";
 
 const Vue = () => {
-  return <div>Vue</div>;
+  return (
+    <>
+      <Delay />
+      <div>Vue</div>
+    </>
+  );
 };
 
 export default Vue;

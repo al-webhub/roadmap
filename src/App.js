@@ -7,31 +7,40 @@ import Algorithms from "./pages/Algorithms";
 import Laravel from "./pages/Laravel";
 import ReactPage from "./pages/ReactPage";
 import Vue from "./pages/Vue";
-
-import { unmountComponentAtNode, render } from "@react-three/fiber";
-
-import styles from "./App.module.css";
+import Preloader from "./components/elements/Preloader";
+import { TransitionGroup } from "react-transition-group";
 
 function App() {
   const [pallete, setPallete] = useState(0);
-  const [loading, setLoading] = useState(true);
+  const [dataPromise, setDataPromise] = useState();
+  const changePalleteHandler = (pallete) => {
+    setPallete(pallete);
 
-  const changePalleteHandler = (palleteNumber) => {
-    setPallete(palleteNumber);
-    //unmountComponentAtNode("canvas");
+    setDataPromise(
+      new Promise((resolve) => {
+        setTimeout(() => {
+          resolve();
+        }, 100);
+      }).then(() => setDataPromise())
+    );
+
+    if (dataPromise) {
+      throw dataPromise;
+    }
   };
 
   const pages = {
     home: {
       link: "/",
-      component: <Landscape pallete={0} />,
+      component: <></>,
     },
     architecture: {
       link: "/software-architecture",
       component: (
         <>
-          <Architecture />
-          <Landscape pallete={1} />
+          <Suspense fallback={<Preloader />}>
+            <Architecture />
+          </Suspense>
         </>
       ),
     },
@@ -39,8 +48,9 @@ function App() {
       link: "/algorithms",
       component: (
         <>
-          <Algorithms />
-          <Landscape pallete={2} />
+          <Suspense fallback={<Preloader />}>
+            <Algorithms />
+          </Suspense>
         </>
       ),
     },
@@ -48,8 +58,9 @@ function App() {
       link: "/laravel",
       component: (
         <>
-          <Laravel />
-          <Landscape pallete={3} />
+          <Suspense fallback={<Preloader />}>
+            <Laravel />
+          </Suspense>
         </>
       ),
     },
@@ -57,8 +68,9 @@ function App() {
       link: "/react",
       component: (
         <>
-          <ReactPage />
-          <Landscape pallete={4} />
+          <Suspense fallback={<Preloader />}>
+            <ReactPage />
+          </Suspense>
         </>
       ),
     },
@@ -66,27 +78,31 @@ function App() {
       link: "/vue",
       component: (
         <>
-          <Vue />
-          <Landscape pallete={5} />
+          <Suspense fallback={<Preloader />}>
+            <Vue />
+          </Suspense>
         </>
       ),
     },
   };
 
   return (
-    <Suspense fallback={null}>
+    <TransitionGroup>
       <Router>
-        <Frame pages={pages} />
-        <Routes>
-          <Route exact path={pages.home.link} element={pages.home.component} />
-          <Route exact path={pages.architecture.link} element={pages.architecture.component} />
-          <Route exact path={pages.algorithms.link} element={pages.algorithms.component} />
-          <Route exact path={pages.laravel.link} element={pages.laravel.component} />
-          <Route exact path={pages.react.link} element={pages.react.component} />
-          <Route exact path={pages.vue.link} element={pages.vue.component} />
-        </Routes>
+        <Suspense fallback={<Preloader />}>
+          <Frame changePallete={changePalleteHandler} pages={pages} />
+          <Routes>
+            <Route exact path={pages.home.link} element={pages.home.component} />
+            <Route exact path={pages.architecture.link} element={pages.architecture.component} />
+            <Route exact path={pages.algorithms.link} element={pages.algorithms.component} />
+            <Route exact path={pages.laravel.link} element={pages.laravel.component} />
+            <Route exact path={pages.react.link} element={pages.react.component} />
+            <Route exact path={pages.vue.link} element={pages.vue.component} />
+          </Routes>
+          <Landscape pallete={pallete} />
+        </Suspense>
       </Router>
-    </Suspense>
+    </TransitionGroup>
   );
 }
 

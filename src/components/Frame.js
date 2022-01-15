@@ -43,7 +43,7 @@ const Frame = ({ pages, changePallete }) => {
             </Link>
           </li>
           <li>
-            <Link onClick={() => changePallete()} to={pages.vue.link} className={`${styles.link} ${styles.linkio}`}>
+            <Link onClick={() => changePallete(5)} to={pages.vue.link} className={`${styles.link} ${styles.linkio}`}>
               Vue
             </Link>
           </li>
