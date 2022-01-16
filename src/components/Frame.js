@@ -51,7 +51,7 @@ const Frame = ({ pages, changePallete }) => {
               style={({ isActive }) => ({
                 color: isActive ? "#ffbe0d" : "#000",
               })}
-              onClick={() => changePallete(7)}
+              onClick={() => changePallete(4)}
               to={pages.vue.link}
               className={`${styles.link} ${styles.linkio}`}
             >
