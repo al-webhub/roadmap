@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./Frame.module.css";
 
 const Frame = ({ pages, changePallete }) => {
@@ -11,41 +11,52 @@ const Frame = ({ pages, changePallete }) => {
         </div>
         <ul className={styles.feature_list}>
           <li>
-            <Link
+            <NavLink
+              style={({ isActive }) => ({
+                color: isActive ? "#ffbe0d" : "#000",
+              })}
               onClick={() => changePallete(1)}
               to={pages.architecture.link}
               className={`${styles.link} ${styles.linkio}`}
             >
-              Software Architecture
-            </Link>
+              Software development
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
+              style={({ isActive }) => ({
+                color: isActive ? "#ffbe0d" : "#000",
+              })}
               onClick={() => changePallete(2)}
               to={pages.algorithms.link}
               className={`${styles.link} ${styles.linkio}`}
             >
               Algorithms
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
+              style={({ isActive }) => ({
+                color: isActive ? "#ffbe0d" : "#000",
+              })}
               onClick={() => changePallete(3)}
-              to={pages.laravel.link}
+              to={pages.react.link}
               className={`${styles.link} ${styles.linkio}`}
             >
-              Laravel
-            </Link>
-          </li>
-          <li>
-            <Link onClick={() => changePallete(4)} to={pages.react.link} className={`${styles.link} ${styles.linkio}`}>
               React
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link onClick={() => changePallete(5)} to={pages.vue.link} className={`${styles.link} ${styles.linkio}`}>
+            <NavLink
+              style={({ isActive }) => ({
+                color: isActive ? "#ffbe0d" : "#000",
+              })}
+              onClick={() => changePallete(7)}
+              to={pages.vue.link}
+              className={`${styles.link} ${styles.linkio}`}
+            >
               Vue
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>

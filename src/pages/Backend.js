@@ -21,9 +21,9 @@ import AltRouteOutlinedIcon from "@mui/icons-material/AltRouteOutlined";
 import SortByAlphaOutlinedIcon from "@mui/icons-material/SortByAlphaOutlined";
 import ReportProblemOutlinedIcon from "@mui/icons-material/ReportProblemOutlined";
 import AccountTreeOutlinedIcon from "@mui/icons-material/AccountTreeOutlined";
-import VueLogo from "../assets/vue_logo.png";
+import ReactLogo from "../assets/react-logo.png";
 
-const Vue = () => {
+const Backend = () => {
   return (
     <>
       <Delay />
@@ -42,28 +42,28 @@ const Vue = () => {
               Main goals
             </Typography>
             <Typography variant="body1" align="left" paragraph={true}>
-              <a target="__blank" href="https://www.udemy.com/course/vuejs-2-the-complete-guide">
-                Vue - The Complete Guide (w/ Router, Vuex, Composition API)
+              <a target="__blank" href="https://www.udemy.com/course/react-the-complete-guide-incl-redux/">
+                React - The Complete Guide (incl Hooks, React Router, Redux)
               </a>
-              We'll start at the very basics, what Vue.js is and how it works before we move on to more complex and
-              advanced topics but I'll be honest: It's too much to fit it all into one sentence, so here's what this
-              course about:
+              <br />A thorough introduction to React.js <br />
+              All the core basics: <br /> How React works, building components with React & building UIs with React
+              Components, props & dynamic data binding.
               <ul>
-                <li>What is VueJS and Why would you use it?</li>
-                <li>The Basics (including the basic Syntax, Understanding Templates and much more!)</li>
-                <li>How to Output Reactive Data & Listen to Events</li>
-                <li>Interacting with DOM (Rendering Lists, Conditionally attaching/ detaching Elements ...)</li>
-                <li>Setting up a Development Environment and Workflow</li>
-                <li>Using Components (and what Components are to begin with)</li>
-                <li>A Deep Dive Look Behind the Scenes of Vue</li>
-                <li>Binding to Form Inputs</li>
-                <li>Sending Http Requests to Backend APIs</li>
-                <li>Authentication & Vue</li>
-                <li>How to make your App more Beautiful with Animations and Transitions</li>
-                <li>How to create an awesome Single-Page-Application (SPA) with Routing</li>
-                <li>How to improve State Management by using Vuex</li>
+                <li>Working with user events and state to create interactive applications</li>
+                <li>A look behind the scenes to understand how React works under the hood</li>
+                <li>Detailed explanations on how to work with lists and conditional content</li>
+                <li>React Hooks (in-depth)! Working with built-in Hooks and building custom Hooks</li>
+                <li>Working with "Fragments" & "Portals"</li>
+                <li>Dealing with side effects</li>
+                <li>Class-based components and functional components</li>
+                <li>Sending Http requests & handling transitional states + responses</li>
+                <li>Handling forms and user input (incl. validation</li>
+                <li>Redux & Redux Toolkit</li>
+                <li>Routing with React Router</li>
+                <li>An in-depth introduction into Next.js</li>
+                <li>Deploying React Apps</li>
                 <li>Implementing Authentication</li>
-                <li>More</li>
+                <li>Unit Tests</li>
               </ul>
             </Typography>
           </Grid>
@@ -74,7 +74,16 @@ const Vue = () => {
             <Timeline position="alternate">
               <TimelineItem>
                 <TimelineOppositeContent sx={{ m: "auto 0" }} align="right" variant="body2" color="text.secondary">
-                  Core syntax, Templates, Directives, Data, Methods, Computed properties, Watchers
+                  <ul
+                    style={{
+                      listStyle: "none",
+                      padding: 0,
+                    }}
+                  >
+                    <li>Javascript refresher</li>
+                    <li>Working with components</li>
+                    <li>Conditions, State</li>
+                  </ul>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                   <TimelineConnector />
@@ -85,14 +94,14 @@ const Vue = () => {
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: "12px", px: 2 }}>
                   <Typography variant="h6" component="span">
-                    Basics
+                    Sections 1 to 8
                   </Typography>
-                  <Typography>Getting started</Typography>
+                  <Typography>React basics</Typography>
                 </TimelineContent>
               </TimelineItem>
               <TimelineItem>
                 <TimelineOppositeContent sx={{ m: "auto 0" }} variant="body2" color="text.secondary">
-                  Components, Component communication, Behind the scenes, Forms, HTTP, Routing, Animations
+                  Side effects, Reducers, Context API, Class based components, Sending HTTP Requests
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                   <TimelineConnector />
@@ -103,14 +112,14 @@ const Vue = () => {
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: "12px", px: 2 }}>
                   <Typography variant="h6" component="span">
-                    Intermediate
+                    Sections 9 to 15
                   </Typography>
-                  <Typography>More core features</Typography>
+                  <Typography>Diving deeper</Typography>
                 </TimelineContent>
               </TimelineItem>
               <TimelineItem>
                 <TimelineOppositeContent sx={{ m: "auto 0" }} variant="body2" color="text.secondary">
-                  Vuex, Authentication, Deployment & Optimizations, Composition API, Reusing code
+                  Forms & User input, Redux, Deploying react apps, Authentication in react Apps
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                   <TimelineConnector />
@@ -121,14 +130,14 @@ const Vue = () => {
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: "12px", px: 2 }}>
                   <Typography variant="h6" component="span">
-                    Advanced
+                    Sections 16 to 24
                   </Typography>
-                  <Typography>Diving deeper</Typography>
+                  <Typography>More advanced features</Typography>
                 </TimelineContent>
               </TimelineItem>
               <TimelineItem>
                 <TimelineOppositeContent sx={{ m: "auto 0" }} variant="body2" color="text.secondary">
-                  Course projects, Demos, Assignments, Challenges
+                  Unit testing, React Hooks summary, Core feature walk-through
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                   <TimelineConnector sx={{ bgcolor: "secondary.main" }} />
@@ -139,9 +148,9 @@ const Vue = () => {
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: "12px", px: 2 }}>
                   <Typography variant="h6" component="span">
-                    Practice
+                    Sections 26 to 31
                   </Typography>
-                  <Typography>Demos & challenges</Typography>
+                  <Typography>Summary</Typography>
                 </TimelineContent>
               </TimelineItem>
             </Timeline>
@@ -149,7 +158,7 @@ const Vue = () => {
           <Grid marginRight="1rem" item xs={2}>
             <Card raised={true} sx={{ maxWidth: 400 }}>
               <CardHeader align="center" title="Certificate of completion" />
-              <CardMedia component="img" height="250" image={VueLogo} />
+              <CardMedia component="img" height="250" image={ReactLogo} />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                   Progress
@@ -160,10 +169,10 @@ const Vue = () => {
               </CardContent>
               <CardActions>
                 <Box sx={{ width: "100%", mr: 1 }}>
-                  <LinearProgress value="15" variant="determinate" />
+                  <LinearProgress value="20" variant="determinate" />
                 </Box>
                 <Box sx={{ minWidth: 35 }}>
-                  <Typography variant="body2" color="text.secondary">{`15%`}</Typography>
+                  <Typography variant="body2" color="text.secondary">{`20%`}</Typography>
                 </Box>
               </CardActions>
             </Card>
@@ -174,4 +183,4 @@ const Vue = () => {
   );
 };
 
-export default Vue;
+export default Backend;

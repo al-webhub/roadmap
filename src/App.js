@@ -35,7 +35,7 @@ function App() {
       component: <></>,
     },
     architecture: {
-      link: "/software-architecture",
+      link: "/backend",
       component: (
         <>
           <Suspense fallback={<Preloader />}>
