@@ -34,7 +34,6 @@
 
 .link {
   cursor: pointer;
-
   position: relative;
   white-space: nowrap;
   color: #111;
@@ -91,4 +90,24 @@
   transform-origin: 100% 50%;
   transform: scale3d(1, 1, 1);
   transition-timing-function: cubic-bezier(0.4, 1, 0.8, 1);
+}
+
+@media only screen and (max-width: 800px) {
+  .title {
+    font-size: 2rem;
+    margin: 0 0 1rem;
+    font-weight: normal;
+    line-height: 1;
+  }
+
+  .frame {
+    padding: 2rem 3vw;
+    text-align: center;
+    position: absolute;
+    z-index: 100000;
+  }
+
+  .topmargin {
+    margin-top: 100vh !important;
+  }
 }

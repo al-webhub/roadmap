@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { render, events } from "@react-three/fiber";
 
 const Landscape = ({ pallete }) => {
-  console.log(pallete);
   useEffect(() => {
     window.addEventListener("resize", () => {
       render(<Plane pallete={pallete} />, document.querySelector("canvas"), {

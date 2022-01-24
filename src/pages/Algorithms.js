@@ -22,8 +22,16 @@ import SortByAlphaOutlinedIcon from "@mui/icons-material/SortByAlphaOutlined";
 import ReportProblemOutlinedIcon from "@mui/icons-material/ReportProblemOutlined";
 import AccountTreeOutlinedIcon from "@mui/icons-material/AccountTreeOutlined";
 import AlgorLogo from "../assets/algor-logo.jpg";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import CustomMobileStepperAlgorithms from "../components/elements/CustomMobileStepperAlgorithms";
 
 const Algorithms = () => {
+  const matches = useMediaQuery("(max-width:1366px)");
+
+  if (matches) {
+    return <CustomMobileStepperAlgorithms />;
+  }
+
   return (
     <>
       <Delay />
@@ -37,7 +45,7 @@ const Algorithms = () => {
         sx={{ flexGrow: 1 }}
       >
         <Grid container direction="row" justifyContent="flex-end" alignItems="" spacing={1}>
-          <Grid item xs={2}>
+          <Grid item xs={2} md={3}>
             <Typography gutterBottom variant="h5" align="center">
               Main goals
             </Typography>
